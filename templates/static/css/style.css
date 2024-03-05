@@ -1,0 +1,43 @@
+/* Style all paragraphs */
+p {
+    font-family: Arial, sans-serif; /* Set the font family */
+    font-size: 16px; /* Set the font size */
+}
+
+/* Style all level two headers */
+h2 {
+    color: #008D25; /* Set text color to green */
+    font-family: "Arial", sans-serif; /* Set font family */
+    font-size: 24px; /* Set font size */
+}
+
+/* Apply the same font to all elements for consistency */
+table, th, td, h1, a, ol, ul {
+    font-family: "Arial", sans-serif; /* Set the font family */
+}
+
+/* Style all tables */
+table {
+    border: 2px solid #2B1700; /* Change the border color to brown */
+    border-collapse: collapse; /* Collapse borders into a single border */
+    width: 30%;
+}
+
+/* Style paragraph with id "dog-paragraph" */
+#dog-paragraph {
+    font-style: italic; /* Make the text italic */
+    color: #2B1700; /* Change text color to brown */
+    text-decoration: underline; /* Underline the text */
+}
+
+/* CSS rule block based off class attribute */
+.special-text {
+    color: #FF00CB; /* Set text color to magenta */
+    font-weight: bold; /* Set font weight to bold */
+}
+
+/* CSS rule block for img tags with the class "logo" */
+img.logo {
+    width: 267px;
+    height: 72px;
+}
