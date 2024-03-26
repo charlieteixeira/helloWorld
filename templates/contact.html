@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block page_title %}Contact{% endblock %}
+
+{% block page_head %}Contact Us{% endblock %}
+
+{% block page_content %}
+    {% if form_submitted %}
+        <div class="col-12">
+            <h2>Thank you for completing the form!</h2>
+        </div>
+        <div class = "col-md-6">
+            <p>First Name: {{ request.form.get('firstName')}}</p>
+        </div>
+        <div class = "col-md-6">
+            <p>Last Name: {{ request.form.get('lastName')}}</p>
+        </div>
+        <div class = "col-md-6">
+            <p>Email Address: {{ request.form.get('email')}}</p>
+        </div>
+        <div class = "col-md-6">
+            <p>Your Message:</p>
+        </div>
+        <div class = "col-md-6">
+            <p>{{ request.form.get('message')}}</p>
+        </div>
+    {% else %}
+    <form class="row g-3" action="{{ url_for('contact') }}" method="post">
+        <div class="col-md-4">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName">
+        </div>
+        <div class="col-md-4">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName">
+        </div>
+        <div class="col-8">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="col-8">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+        </div>
+        <div class="col-8">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    {% endif %}
+{% endblock %}

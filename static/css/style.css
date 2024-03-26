@@ -12,7 +12,7 @@ h2 {
 }
 
 /* Apply the same font to all elements for consistency */
-table, th, td, h1, a, ol, ul {
+table, th, td, h1, a, ol, ul, .navbar, .nav-item, .btn, .form-label {
     font-family: "Arial", sans-serif; /* Set the font family */
 }
 
