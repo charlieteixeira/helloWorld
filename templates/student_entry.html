@@ -23,8 +23,10 @@
 
 {% block page_content %}
 
+    <!-- Format for editing/updating student information -->
 <form class="row g-3"
       action="{{ url_for('student_edit', student_id=student['student_id']) if student else url_for('student_create') }}" method="post">
+ <!-- Formatting for first name input -->
   <div class="col-md-4">
     <label for="first_name" class="form-label"><strong>First Name</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -33,6 +35,7 @@
         <br>{{ student['first_name'] }}
     {% endif %}
   </div>
+    <!-- Formatting for last name input -->
   <div class="col-md-4">
     <label for="last_name" class="form-label"><strong>Last Name</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -41,6 +44,7 @@
         <br>{{ student['last_name'] }}
     {% endif %}
   </div>
+<!-- Formatting for email input -->
   <div class="col-md-4">
     <label for="student_email" class="form-label"><strong>Email</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -49,6 +53,7 @@
         <br>{{ student['student_email'] }}
     {% endif %}
   </div>
+<!-- Formatting for birth date input -->
   <div class="col-md-4">
     <label for="birth_date" class="form-label"><strong>Birth Date</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -57,7 +62,7 @@
         <br>{{ student['birth_date'].strftime('%m/%d/%Y') }}
     {% endif %}
   </div>
-
+<!-- Formatting for major input -->
   <div class="col-md-4">
     <label for="major_id" class="form-label"><strong>Major</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -75,7 +80,7 @@
         {% endfor %}
     {% endif %}
   </div>
-
+<!-- Formatting for credit input -->
   {% if action and action in ['read', 'update'] %}
   <div class="col-md-4">
     <label for="num_credits_completed" class="form-label"><strong>Number of Credits Completed</strong></label>
@@ -86,6 +91,7 @@
         <br> {{ student['num_credits_completed'] }}
     {% endif %}
   </div>
+      <!-- Formatting for GPA input -->
   <div class="col-md-4">
     <label for="gpa" class="form-label"><strong>GPA</strong></label>
     {% if action and action in ['create', 'update'] %}
@@ -95,7 +101,7 @@
     {% endif %}
   </div>
   {% endif %}
-
+<!-- Formatting for honors checkbox input -->
   <div class="col-12">
         {% if action and action in ['create', 'update'] %}
     <div class="form-check">
@@ -111,7 +117,7 @@
       </label>
   </div>
 
-
+<!-- Formatting submit input -->
   </div>
   <div class="col-12 text-center">
     {% if action and action in ['create', 'update'] %}

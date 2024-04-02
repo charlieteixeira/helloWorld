@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block page_content %}
-
+    <!-- Flash error message -->
     <div class="row">
     <div class="col">
 
@@ -23,6 +23,7 @@
             {% endif %}
         {% endwith %}
 
+    <!-- Table headers for viewing all students -->
     <table class="table table-striped">
         <tr>
             <th>Last Name</th>
@@ -37,12 +38,11 @@
         <tr>
             <td><a href="{{ url_for('student_view', student_id=each_student['student_id']) }}">{{ each_student['last_name'] }}</a></td>
             <td>{{ each_student['first_name'] }}</td>
-            <td>{{ each_student['student_email'] }}</td>
+            <td>{{ each_student['student_email'] }}</td> <!-- Added student email -->
             <td>{{ each_major['major'] }}</td>
             <td>{{ 'Yes' if each_student['is_honors'] == 1 else 'No' }}</td>
             <td>
                 <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Edit</a>
-                &nbsp;
                 <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Delete</a>
             </td>
         </tr>
@@ -51,6 +51,7 @@
     </div>
     </div>
 
+    <!-- Total number of students -->
     <div class="row">
         <div class="col">
             Total Number of Students: {{ students|length }}
